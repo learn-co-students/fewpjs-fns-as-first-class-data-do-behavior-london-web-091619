@@ -1,11 +1,15 @@
-/* Given Code, don't edit */
-
 function handleClick(e) {
-  const timeString = document.getElementById('time').value
+  const timeString = document.getElementById("time").value
   displayMessage(greet(timeString))
 }
 
-/* End Given Code, don't edit above here...*/
+function greet(timeString) {
+  const hour = timeString.split(":")[0]
+  return hour < 12 ? "Good Morning"
+    : hour < 17 ? "Good Afternoon"
+      : "Good Evening"
+}
 
-/* Write your implementation of greet() */
-/* Write your implementation of displayMessage() */
+function displayMessage(message) {
+  document.querySelector("#greeting").innerText = message
+}
